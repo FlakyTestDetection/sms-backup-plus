@@ -1,15 +1,16 @@
 after_failure: cat target/lint-results/lint-results.xml || true
 android:
-  components:
-  - tools
-  - build-tools-24.0.3
-  - android-24
-  - extra-android-m2repository
+ components:
+    - tools
+    - build-tools-26.0.0
+    - android-26
+    - extra-android-m2repository
 before_install:
 - wget https://dl.dropboxusercontent.com/u/7897865/apache-maven-3.3.9.zip
 - unzip -qq apache-maven-3.3.9.zip
 - export M2_HOME=$PWD/apache-maven-3.3.9
 - export PATH=$M2_HOME/bin:$PATH
+
 jdk: oraclejdk8
 language: android
 notifications:
@@ -20,5 +21,6 @@ notifications:
     - Build <%{build_url}|#%{build_number}> (<%{compare_url}|%{commit}>) of %{repository}@%{branch} by %{author} %{result} in %{duration}
     - 'dashbot: %{repository_name} %{build_id}'
 script:
-- mvn android:lint
-- mvn test
+  - mvn android:lint
+  - mvn test
+  - ./gradlew build
