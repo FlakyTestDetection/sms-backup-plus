@@ -1,10 +1,11 @@
-## SMS Backup+ ![Icon][]
+# SMS Backup+ ![Icon][] [![Build Status SVG][]][Build Status]
 
 <a href="https://play.google.com/store/apps/details?id=com.zegoggles.smssync">
-    <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/apps/en-play-badge.png" height="40pt"/>
+    <img alt="Get it on Google Play" src="https://jberkel.github.io/sms-backup-plus/assets/img/google-play-badge.png" height="80pt"/> </a> &nbsp; <a href="https://f-droid.org/packages/com.zegoggles.smssync/">
+    <img alt="Get it on F-Droid" src="https://jberkel.github.io/sms-backup-plus/assets/img/f-droid-badge.svg" height="80pt"/>
 </a>
 
-[![Build Status PNG][]][Build Status]
+
 
 This is a fork of the Android backup tool
 [SMS Backup](http://code.google.com/p/android-sms), where development has
@@ -43,10 +44,6 @@ from [releases][].
 Also make sure to read the [Privacy Policy][privacy-policy].
 
 ## <a name="usage">Usage</a>
-
-### Installation
-
-![PlayQRCode][] Install via the Android QR code link, [Google Play][PlayLink], [f-droid][].
 
 ### First steps
 
@@ -477,7 +474,7 @@ This application is released under the terms of the [Apache License, Version 2.0
 [releases]: https://github.com/jberkel/sms-backup-plus/releases
 [pull request]: https://help.github.com/articles/using-pull-requests/
 [Build Status]: http://travis-ci.org/jberkel/sms-backup-plus
-[Build Status PNG]: https://secure.travis-ci.org/jberkel/sms-backup-plus.png?branch=master
+[Build Status SVG]: https://secure.travis-ci.org/jberkel/sms-backup-plus.svg?branch=master
 [Apache License, Version 2.0]: http://www.apache.org/licenses/LICENSE-2.0.html
 [507]: https://github.com/jberkel/sms-backup-plus/issues/507
 [516]: https://github.com/jberkel/sms-backup-plus/issues/516
