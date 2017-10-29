@@ -34,6 +34,7 @@ import static com.android.billingclient.api.BillingClient.BillingResponse.ITEM_U
 import static com.android.billingclient.api.BillingClient.BillingResponse.OK;
 import static com.android.billingclient.api.BillingClient.BillingResponse.USER_CANCELED;
 import static com.android.billingclient.api.BillingClient.SkuType.INAPP;
+import static com.zegoggles.smssync.App.LOCAL_LOGV;
 import static com.zegoggles.smssync.App.TAG;
 import static com.zegoggles.smssync.Consts.Billing.ALL_SKUS;
 import static com.zegoggles.smssync.Consts.Billing.DONATION_PREFIX;
@@ -212,30 +213,33 @@ public class DonationActivity extends Activity implements SkuDetailsResponseList
             UNKNOWN,
             NOT_AVAILABLE
         }
-        void userDonationState(State s);
+        void userDonationState(State state);
     }
 
-    public static void checkUserHasDonated(Context c, final DonationStatusListener l) {
-        final BillingClient helper = BillingClient.newBuilder(c).setListener(new PurchasesUpdatedListener() {
+    public static void checkUserHasDonated(Context context, final DonationStatusListener listener) {
+        final BillingClient helper = BillingClient.newBuilder(context).setListener(new PurchasesUpdatedListener() {
             @Override
             public void onPurchasesUpdated(int responseCode, List<Purchase> purchases) {
-                Log.d(TAG, "onPurchasesUpdated("+responseCode+")");
+                if (LOCAL_LOGV) {
+                    Log.v(TAG, "onPurchasesUpdated(" + responseCode + ")");
+                }
             }
         }).build();
         helper.startConnection(new BillingClientStateListener() {
             @Override
-            public void onBillingSetupFinished(int resultCode) {
-                Log.d(TAG, "checkUserHasDonated: onBillingSetupFinished("+resultCode+")");
+            public void onBillingSetupFinished(@BillingResponse int resultCode) {
+                if (LOCAL_LOGV) {
+                    Log.v(TAG, "checkUserHasDonated: onBillingSetupFinished("+resultCode+")");
+                }
                 if (resultCode == OK) {
                     Purchase.PurchasesResult result = helper.queryPurchases(INAPP);
                     if (result.getResponseCode() == OK) {
-                        final State s = userHasDonated(result.getPurchasesList()) ? DONATED : NOT_DONATED;
-                        l.userDonationState(s);
+                        listener.userDonationState(userHasDonated(result.getPurchasesList()) ? DONATED : NOT_DONATED);
                     } else {
-                        l.userDonationState(UNKNOWN);
+                        listener.userDonationState(UNKNOWN);
                     }
                 } else {
-                    l.userDonationState(resultCode == BILLING_UNAVAILABLE ? NOT_AVAILABLE : UNKNOWN);
+                    listener.userDonationState(resultCode == BILLING_UNAVAILABLE ? NOT_AVAILABLE : UNKNOWN);
                 }
                 try {
                     helper.endConnection();

@@ -25,7 +25,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Build;
@@ -81,7 +80,11 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import static android.content.pm.PackageManager.COMPONENT_ENABLED_STATE_DISABLED;
+import static android.content.pm.PackageManager.COMPONENT_ENABLED_STATE_ENABLED;
+import static android.content.pm.PackageManager.DONT_KILL_APP;
 import static android.widget.Toast.LENGTH_LONG;
+import static com.zegoggles.smssync.App.LOCAL_LOGV;
 import static com.zegoggles.smssync.App.TAG;
 import static com.zegoggles.smssync.mail.DataType.CALLLOG;
 import static com.zegoggles.smssync.mail.DataType.MMS;
@@ -250,10 +253,14 @@ public class MainActivity extends PreferenceActivity {
                 break;
             }
             case REQUEST_PICK_ACCOUNT: {
-                if (AccountManagerAuthActivity.ACTION_ADD_ACCOUNT.equals(data.getAction())) {
-                    handleAccountManagerAuth(data);
-                } else if (AccountManagerAuthActivity.ACTION_FALLBACKAUTH.equals(data.getAction())) {
-                    handleFallbackAuth();
+                if (resultCode == RESULT_OK && data != null) {
+                    if (AccountManagerAuthActivity.ACTION_ADD_ACCOUNT.equals(data.getAction())) {
+                        handleAccountManagerAuth(data);
+                    } else if (AccountManagerAuthActivity.ACTION_FALLBACKAUTH.equals(data.getAction())) {
+                        handleFallbackAuth();
+                    }
+                } else if (LOCAL_LOGV) {
+                    Log.v(TAG, "request canceled, result="+resultCode);
                 }
                 break;
             }
@@ -263,6 +270,22 @@ public class MainActivity extends PreferenceActivity {
     @Subscribe public void restoreStateChanged(final RestoreState newState) {
         if (isSmsBackupDefaultSmsApp() && newState.isFinished()) {
             restoreDefaultSmsProvider(preferences.getSmsDefaultPackage());
+        }
+    }
+
+    @Subscribe public void autoBackupChanged(final AutoBackupChangedEvent event) {
+        if (LOCAL_LOGV) {
+            Log.v(TAG, "autoBackupChanged("+event+")");
+        }
+        getPackageManager().setComponentEnabledSetting(
+                new ComponentName(this, SmsBroadcastReceiver.class),
+                event.autoBackupEnabled ? COMPONENT_ENABLED_STATE_ENABLED : COMPONENT_ENABLED_STATE_DISABLED,
+                DONT_KILL_APP);
+
+        if (event.autoBackupEnabled) {
+            getBackupJobs().scheduleFirstRegular();
+        } else {
+            getBackupJobs().cancel();
         }
     }
 
@@ -369,7 +392,7 @@ public class MainActivity extends PreferenceActivity {
                 WIFI_ONLY.key);
     }
 
-    private void addSummaryListener(final Runnable r, String... prefs) {
+    private void addSummaryListener(final Runnable runnable, String... prefs) {
         for (String p : prefs) {
             findPreference(p).setOnPreferenceChangeListener(
                     new OnPreferenceChangeListener() {
@@ -377,7 +400,7 @@ public class MainActivity extends PreferenceActivity {
                             new Handler().post(new Runnable() {
                                 @Override
                                 public void run() {
-                                    r.run();
+                                    runnable.run();
                                     onContentChanged();
                                 }
                             });
@@ -785,17 +808,8 @@ public class MainActivity extends PreferenceActivity {
 
         findPreference(ENABLE_AUTO_BACKUP.key)
                 .setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
-
                     public boolean onPreferenceChange(Preference preference, Object newValue) {
-                        boolean isEnabled = (Boolean) newValue;
-                        final ComponentName componentName = new ComponentName(MainActivity.this,
-                                SmsBroadcastReceiver.class);
-                        getPackageManager().setComponentEnabledSetting(componentName,
-                                isEnabled ? PackageManager.COMPONENT_ENABLED_STATE_ENABLED :
-                                        PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
-                                PackageManager.DONT_KILL_APP);
-
-                        if (!isEnabled) new BackupJobs(MainActivity.this).cancel();
+                        App.bus.post(new AutoBackupChangedEvent((Boolean) newValue));
                         return true;
                     }
                 });
@@ -848,13 +862,7 @@ public class MainActivity extends PreferenceActivity {
             public boolean onPreferenceChange(Preference preference, Object change) {
                 boolean newValue = (Boolean) change;
                 if (newValue) {
-                    if (Build.VERSION.SDK_INT >= 5) {
-                        // use account manager on newer phones
-                        startActivityForResult(new Intent(MainActivity.this, AccountManagerAuthActivity.class), REQUEST_PICK_ACCOUNT);
-                    } else {
-                        // fall back to webview on older ones
-                        handleFallbackAuth();
-                    }
+                    startActivityForResult(new Intent(MainActivity.this, AccountManagerAuthActivity.class), REQUEST_PICK_ACCOUNT);
                 } else {
                     show(Dialogs.DISCONNECT);
                 }
@@ -865,50 +873,43 @@ public class MainActivity extends PreferenceActivity {
         findPreference(SMS.folderPreference)
                 .setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
                     public boolean onPreferenceChange(Preference preference, final Object newValue) {
-                        String imapFolder = newValue.toString();
-
-                        if (BackupImapStore.isValidImapFolder(imapFolder)) {
-                            preference.setTitle(imapFolder);
-                            return true;
-                        } else {
-                            runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    show(Dialogs.INVALID_IMAP_FOLDER);
-                                }
-                            });
-                            return false;
-                        }
+                        return checkValidImapFolder(preference, newValue.toString());
                     }
                 });
 
         findPreference(CALLLOG.folderPreference)
                 .setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
                     public boolean onPreferenceChange(Preference preference, final Object newValue) {
-                        String imapFolder = newValue.toString();
-
-                        if (BackupImapStore.isValidImapFolder(imapFolder)) {
-                            preference.setTitle(imapFolder);
-                            return true;
-                        } else {
-                            runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    show(Dialogs.INVALID_IMAP_FOLDER);
-                                }
-                            });
-                            return false;
-                        }
+                        return checkValidImapFolder(preference, newValue.toString());
                     }
                 });
+    }
+
+    private boolean checkValidImapFolder(Preference preference, String imapFolder) {
+        if (BackupImapStore.isValidImapFolder(imapFolder)) {
+            preference.setTitle(imapFolder);
+            return true;
+        } else {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    show(Dialogs.INVALID_IMAP_FOLDER);
+                }
+            });
+            return false;
+        }
+    }
+
+    private BackupJobs getBackupJobs() {
+        return new BackupJobs(this);
     }
 
     private void checkUserDonationStatus() {
         try {
             DonationActivity.checkUserHasDonated(this, new DonationActivity.DonationStatusListener() {
                 @Override
-                public void userDonationState(State s) {
-                    switch (s) {
+                public void userDonationState(State state) {
+                    switch (state) {
                         case NOT_AVAILABLE:
                         case DONATED:
                             Preference donate = getPreferenceScreen().findPreference(DONATE.key);
@@ -985,6 +986,14 @@ public class MainActivity extends PreferenceActivity {
     private void checkDefaultSmsApp() {
         if (isSmsBackupDefaultSmsApp() && !SmsRestoreService.isServiceWorking()) {
             restoreDefaultSmsProvider(preferences.getSmsDefaultPackage());
+        }
+    }
+
+    public static class AutoBackupChangedEvent {
+        final boolean autoBackupEnabled;
+
+        AutoBackupChangedEvent(boolean autoBackupEnabled) {
+            this.autoBackupEnabled = autoBackupEnabled;
         }
     }
 }
