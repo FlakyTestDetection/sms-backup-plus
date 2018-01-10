@@ -65,7 +65,6 @@
   <string name="imap_settings">IMAP indstillinger</string>
   <string name="ui_login_label">Brugernavn</string>
   <string name="ui_login_desc">Din IMAP konto/e-mail adresse.</string>
-  <string name="ui_login_dialog_msg">ADVARSEL: Ændring af brugernavn kan få integrationen til ikke at virke når der bruges XOAuth.</string>
   <string name="ui_password_label">Password</string>
   <string name="ui_password_desc">Dit IMAP konto password. Bruges kun når XOAuth er deaktiveret.</string>
   <string name="ui_password_dialog_msg">Kodeordet er kun lagret på denne enhed og bruges kun login.</string>
@@ -95,7 +94,6 @@
 
   <string name="ui_backup_mms_label">Backup MMS</string>
   <string name="ui_backup_mms_desc">Aktiver MMS backup</string>
-  <string name="ui_backup_mms_not_supported">MMS backup er ikke supporteret på denn platform.</string>
 
   <string name="ui_backup_calllog_label">Backup opkalds log</string>
   <string name="ui_backup_calllog_desc">Aktiver opkalds log backup</string>
@@ -129,8 +127,6 @@
 
   <string name="sd_card_disclaimer">Automatisk backup vil sikkert ikke virke når app\'en er installeret på SD kortet.</string>
 
-  <string name="ui_enable_auto_sync_bg_data">Du skal også aktivere baggrundsdata.</string>
-
   <string name="ui_auto_backup_schedule_label">Almindeligt interval</string>
   <string name="ui_auto_backup_schedule_desc">Hvor ofte bliver der backed op</string>
 
@@ -157,7 +153,6 @@
   <string name="ui_dialog_first_sync_title">Første backup</string>
   <string name="ui_dialog_first_sync_msg">Foretag backup af de SMS\'er der er på telefonen nu, eller spring over?</string>
   <string name="ui_dialog_first_sync_msg_batched">Foretag backup af de SMS\'er der er på telefonen nu, eller spring over?\n\nBemærk: Backuppen vil blive splittet op i bunker af %1$d beskeder.</string>
-  <string name="ui_dialog_request_token_msg">Kontakter Google…</string>
   <string name="ui_dialog_access_token_msg">Forespørger om adgang…</string>
 
   <string name="ui_dialog_access_token_error_title">Kunne ikke få adgang</string>
@@ -165,16 +160,12 @@
   <string name="ui_dialog_access_token_error_msg">Kunne ikke få adgang. Husk at vælg \"Tillad adgang\".</string>
 
   <string name="ui_dialog_connect_msg">Et browser vindue vil blive åbnet. Du vil blive bedt om at logge ind på din Gmail konto, for at give %1$s adgang til dine emails</string>
-  <string name="ui_dialog_connect_token_error">Kunne ikke få svar fra Google. Kontroller at der er netværksforbindelse og at tiden og tidszonen er indstillet korrekt.</string>
   <string name="ui_dialog_disconnect_msg">Er du sikker? Du skal bagefter gen-autorisere kontoen og dine synkroniseringen vil blive nulstillet.</string>
 
   <string name="ui_dialog_upgrade_title">Opgraderings information</string>
   <string name="ui_dialog_upgrade_msg">
       SMS Backup+ er fuldt kompatibelt med SMS Backup. Men du skal sikre dig at \"Auto backup\" kun er slået til i en af apps\'ne, ellers risikerer du dubletter. Vælg også \"Spring over\" ved første synkronisering af beskedder på telefonen, hvor der allerede er backed beskeder op.
   </string>
-
-  <string name="ui_dialog_brokendroidx_title">DROID X SMS fejl</string>
-  <string name="ui_dialog_brokendroidx_msg">Der er en fejl der forhindrer beskeder i at blive backed op på Droid X. Se FAQ\'en på hjemmesiden for mere info.</string>
 
   <string name="ui_sync">Backup</string>
   <string name="ui_skip">Spring over</string>

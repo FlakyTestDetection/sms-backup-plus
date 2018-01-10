@@ -65,7 +65,6 @@
   <string name="imap_settings">IMAP-instellingen</string>
   <string name="ui_login_label">Gebruikersnaam</string>
   <string name="ui_login_desc">Uw IMAP-account/e-mailadres.</string>
-  <string name="ui_login_dialog_msg">WAARSCHUWING: de gebruikersnaam wijzigen kan dingen stuk laten gaan bij gebruik van XOAuth.</string>
   <string name="ui_password_label">Wachtwoord</string>
   <string name="ui_password_desc">Het wachtwoord van uw IMAP-acccount. Enkel te gebruiken als XOAuth uitgeschakeld is.</string>
   <string name="ui_password_dialog_msg">Het wachtwoord wordt opgeslagen op dit apparaat en wordt enkel gebruikt om aan te melden.</string>
@@ -95,7 +94,6 @@
 
   <string name="ui_backup_mms_label">MMS back-uppen</string>
   <string name="ui_backup_mms_desc">MMS-back-up inschakelen</string>
-  <string name="ui_backup_mms_not_supported">MMS-back-up wordt niet ondersteund op dit platform.</string>
 
   <string name="ui_backup_calllog_label">Gesprekkenlijst back-uppen</string>
   <string name="ui_backup_calllog_desc">Back-up van gesprekkenlijst inschakelen</string>
@@ -129,8 +127,6 @@
 
   <string name="sd_card_disclaimer">Automatische back-up werkt mogelijks niet goed als de app opgeslagen is op de SD-kaart.</string>
 
-  <string name="ui_enable_auto_sync_bg_data">U zal ook achtergronddata moeten inschakelen.</string>
-
   <string name="ui_auto_backup_schedule_label">Normaal rooster</string>
   <string name="ui_auto_backup_schedule_desc">Wanneer sms\'en moeten geback-upt worden</string>
 
@@ -157,7 +153,6 @@
   <string name="ui_dialog_first_sync_title">Eerste back-up</string>
   <string name="ui_dialog_first_sync_msg">Back-uppen of alle berichten opgeslagen op dit apparaat overslaan?</string>
   <string name="ui_dialog_first_sync_msg_batched">Back-uppen of alle berichten opgeslagen op dit apparaat overslaan?\n\nOpmerking: de back-up zal worden opgesplitst in delen van %1$d berichten.</string>
-  <string name="ui_dialog_request_token_msg">Google contacteren…</string>
   <string name="ui_dialog_access_token_msg">Toegang aanvragen…</string>
 
   <string name="ui_dialog_access_token_error_title">Autorisatie mislukt</string>
@@ -165,16 +160,12 @@
   </string>
 
   <string name="ui_dialog_connect_msg">Een browservenster zal geopend worden en u vragen om u aan te melden bij Gmail om %1$s toegang te geven tot uw e-mails.</string>
-  <string name="ui_dialog_connect_token_error">Kon geen verzoektoken verkrijgen van Google. Verzeker uzelf ervan dat uw netwerkverbinding actief is en dat uw tijd en tijdzone juist ingesteld zijn.</string>
   <string name="ui_dialog_disconnect_msg">Weet u het zeker? U zal uw account opnieuw moeten autoriseren nadat u de verbinding hebt verbroken en de lokale synchronisatiestatus zal opnieuw worden ingesteld.</string>
 
   <string name="ui_dialog_upgrade_title">Upgrade-informatie</string>
   <string name="ui_dialog_upgrade_msg">
    SMS Backup+ is volledig compatibel SMS Backup. Zorg er wel voor dat \"Automatische back-up\" maar in één app aan staat, anders krijgt u dubbele berichten. Ook moet u berichten \"overslaan\" als u voor het eerst synchroniseert en uw berichten op uw telefoon al geback-upt zijn.
   </string>
-
-  <string name="ui_dialog_brokendroidx_title">DROID X-sms-bug</string>
-  <string name="ui_dialog_brokendroidx_msg">Er is een bug in Droid X waardoor deze app inkomende berichten niet kan back-uppen. Bekijk de veel gestelde vragen (FAQ) op de website voor meer informatie.</string>
 
   <string name="ui_sync">Back-uppen</string>
   <string name="ui_skip">Overslaan</string>

@@ -1,10 +1,8 @@
 package com.zegoggles.smssync.mail;
 
-import android.annotation.TargetApi;
 import android.content.ContentResolver;
 import android.database.Cursor;
 import android.net.Uri;
-import android.os.Build;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
@@ -16,14 +14,12 @@ import java.util.Map;
 
 import static com.zegoggles.smssync.App.LOCAL_LOGV;
 import static com.zegoggles.smssync.App.TAG;
-import static com.zegoggles.smssync.mail.MessageConverter.ECLAIR_CONTENT_URI;
+import static com.zegoggles.smssync.mail.MessageConverter.CONTENT_URI;
 
 public class PersonLookup {
     private static final String[] PHONE_PROJECTION = getPhoneProjection();
-    // PhoneLookup.CONTENT_FILTER_URI
-    private static final Uri ECLAIR_CONTENT_FILTER_URI =
+    private static final Uri CONTENT_FILTER_URI =
             Uri.parse("content://com.android.contacts/phone_lookup");
-
 
     private static final int MAX_PEOPLE_CACHE_SIZE = 500;
 
@@ -48,7 +44,7 @@ public class PersonLookup {
         if (TextUtils.isEmpty(address)) {
             return new PersonRecord(0, null, null, "-1");
         } else if (!mPeopleCache.containsKey(address)) {
-            Uri personUri = Uri.withAppendedPath(ECLAIR_CONTENT_FILTER_URI, Uri.encode(address));
+            Uri personUri = Uri.withAppendedPath(CONTENT_FILTER_URI, Uri.encode(address));
 
             Cursor c = mResolver.query(personUri, PHONE_PROJECTION, null, null, null);
             final PersonRecord record;
@@ -73,8 +69,6 @@ public class PersonLookup {
         return mPeopleCache.get(address);
     }
 
-    @TargetApi(Build.VERSION_CODES.ECLAIR)
-    @SuppressWarnings("deprecation")
     private String getPrimaryEmail(final long personId) {
         if (personId <= 0) {
             return null;
@@ -83,7 +77,7 @@ public class PersonLookup {
 
         // Get all e-mail addresses for that person.
         Cursor c = mResolver.query(
-            ECLAIR_CONTENT_URI,
+                CONTENT_URI,
                 new String[]{ContactsContract.CommonDataKinds.Email.DATA},
                 ContactsContract.CommonDataKinds.Email.CONTACT_ID + " = ?", new String[]{String.valueOf(personId)},
                 ContactsContract.CommonDataKinds.Email.IS_PRIMARY + " DESC");
@@ -113,8 +107,6 @@ public class PersonLookup {
                  email.toLowerCase(Locale.ENGLISH).endsWith("googlemail.com"));
     }
 
-    @TargetApi(Build.VERSION_CODES.ECLAIR)
-    @SuppressWarnings("deprecation")
     private static String[] getPhoneProjection() {
         return new String[]{ContactsContract.Contacts._ID, ContactsContract.Contacts.DISPLAY_NAME};
     }

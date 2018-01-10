@@ -65,7 +65,6 @@
   <string name="imap_settings">IMAP nastavení</string>
   <string name="ui_login_label">Uživatel</string>
   <string name="ui_login_desc">Váš IMAP uživatel/emailová adresa.</string>
-  <string name="ui_login_dialog_msg">UPOZORNĚNÍ: Změna uživ.jména může při užití XOAuth způsobit problémy.</string>
   <string name="ui_password_label">Heslo</string>
   <string name="ui_password_desc">Heslo pro IMAP účet. Aktivní pouze při zakázaném XOAuth.</string>
   <string name="ui_password_dialog_msg">Heslo je uloženo v telefonu a je použito jen pro přihlášení.</string>
@@ -95,7 +94,6 @@
 
   <string name="ui_backup_mms_label">Zálohuj MMS</string>
   <string name="ui_backup_mms_desc">Povolit zálohu MMS</string>
-  <string name="ui_backup_mms_not_supported">Záloha MMS není na této platformě podporována.</string>
 
   <string name="ui_backup_calllog_label">Zálohuj výpis volání</string>
   <string name="ui_backup_calllog_desc">Polovit zálohu výpisu volání (beta)</string>
@@ -140,7 +138,6 @@
   <string name="ui_dialog_first_sync_title">První záloha</string>
   <string name="ui_dialog_first_sync_msg">Zálohovat nebo přeskočit všechny zprávy v tomto telefonu?</string>
   <string name="ui_dialog_first_sync_msg_batched">Zálohovat nebo přeskočit všechny zprávy v tomto telefonu?\n\nPoznámka: Záloha bude rozdělena do dávek po %1$d zpráv.</string>
-  <string name="ui_dialog_request_token_msg">Připojování ke Google...</string>
   <string name="ui_dialog_access_token_msg">Vyžadování přístupu...</string>
 
   <string name="ui_dialog_access_token_error_title">Chyba authentifikace</string>
@@ -149,17 +146,12 @@
   </string>
 
   <string name="ui_dialog_connect_msg">Bude otevřen prohlížeč pro přihlášení do GMail účtu a povolení %1$s přístupu do GMailu.</string>
-  <string name="ui_dialog_connect_token_error">Není možné získat přístupový token od Googlu. Ujistěte se, že připojení k internetu je aktivní a Váš čas / časová zóna je správně nastavena.</string>
   <string name="ui_dialog_disconnect_msg">Jste si jistí? Po odpojení bude nutné opětovně autorizovat Váš účet a stav synchonizace bude resetován.</string>
 
   <string name="ui_dialog_upgrade_title">Informace o upgradu</string>
   <string name="ui_dialog_upgrade_msg">
    SMS Backup+ je plně zpětně kompatibilní s SMS backup. Přesto se ujistěte, že \"Auto backup\" je povolen jen v jedné aplikaci, jinak je možný vznik duplikací. Měli byste také zvolit \"Skip\" zprávy pro první migraci, pokud zprávy v telefonu již byly dříve zálohovány.
   </string>
-
-  <string name="ui_dialog_brokendroidx_title">DROID X SMS chyba</string>
-  <string name="ui_dialog_brokendroidx_msg">V Droid X je chyba která
-  zabraňuje této aplikaci v záloze příchozích zpráv. Více informací naleznete v sekci FAQ na webové stránce.</string>
 
   <string name="ui_sync">Zálohovat</string>
   <string name="ui_skip">Přeskočit</string>

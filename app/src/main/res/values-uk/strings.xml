@@ -50,7 +50,6 @@
 <string name="imap_settings">Налаштування IMAP</string>
 <string name="ui_login_label">Ім’я користувача</string>
 <string name="ui_login_desc">IMAP логін або адреса електронної пошти.</string>
-<string name="ui_login_dialog_msg">УВАГА: Зміна зміна логіну викликати проблеми при використанні XOAuth.</string>
 <string name="ui_password_label">Пароль</string>
 <string name="ui_password_desc">Пароль до вашого облікового запису IMAP. Використовується лише якщо XOAuth відключено.</string>
 <string name="ui_password_dialog_msg">Пароль зберігається на цьому пристрої і використовується лише для входу.</string>
@@ -76,7 +75,6 @@
 <string name="ui_restore_starred_only_desc">Відновлення лише позначених елементів.</string>
 <string name="ui_backup_mms_label">Збереження MMS</string>
 <string name="ui_backup_mms_desc">Дозволити резервне копіювання MMS повідомлень</string>
-<string name="ui_backup_mms_not_supported">Резервне копіювання MMS не підтримується на цій платформі.</string>
 <string name="ui_backup_calllog_label">Збереження журналу викликів</string>
 <string name="ui_backup_calllog_desc">Дозволити резервне копіювання журналу викликів</string>
 <string name="ui_backup_calllog_sync_calendar_enabled_label">Синхронізація до календаря</string>
@@ -99,7 +97,6 @@
 <string name="ui_enable_auto_sync_summary">Автоматично збережено %1$s.</string>
 <string name="ui_enable_auto_sync_no_enabled_summary">Не обрано тип елементу для резервного копіювання.</string>
 <string name="sd_card_disclaimer">Автоматичне резервне копіювання може ненадійно працювати, коли програма встановлена ​​на SD-картку.</string>
-<string name="ui_enable_auto_sync_bg_data">Ви маєте включити фонову передачу даних.</string>
 <string name="ui_auto_backup_schedule_label">Постійний розклад</string>
 <string name="ui_auto_backup_schedule_desc">Коли зберігати SMS повідомлення</string>
 <string name="ui_auto_backup_incoming_schedule_label">Вхідний розклад</string>
@@ -121,18 +118,14 @@
 <string name="ui_dialog_first_sync_msg_batched">Збереження або пропуск всіх попередніх повідомлень, які зберігаються на цьому пристрої?
 
 Примітка: резервні копії буде розподілено на частина по %1$d повідомлень.</string>
-<string name="ui_dialog_request_token_msg">З’єднання з Google\u2026</string>
 <string name="ui_dialog_access_token_msg">Запит доступу\u2026</string>
 <string name="ui_dialog_access_token_error_title">Помилка авторизації</string>
 <string name="ui_dialog_access_token_error_msg">Не можливо отримати доступ. Переконайтеся, що ви надали доступ застосунку.</string>
 <string name="ui_dialog_connect_msg">В вікні переглядачу тенет надайте доступ застосунку %1$s до вашої пошти.</string>
-<string name="ui_dialog_connect_token_error">Не вдалося з’єднатися з Google. Переконайтеся, що мережеве з’єднання встановлено і час та часовий пояс налаштовані правильно.</string>
 <string name="ui_dialog_disconnect_msg">Ви впевнені? Після відключення потрібно буде повторно надати доступ до вашої пошти. Стан синхронізації буде скинуто.</string>
 <string name="ui_dialog_upgrade_title">Інформація про сумісність</string>
 <string name="ui_dialog_upgrade_msg">
    SMS Backup+ є повністю сумісною SMS Backup. Однак переконайтеся, що \"Автоматичне резервне копіювання\" включено лише в одному застосунку, в іншому випадку ви можете отримати дублікати. Також ви маєте обрати \"Проминути\" в повідомлені для першої синхронізації, якщо повідомлення на телефоні вже були збережені раніше.</string>
-<string name="ui_dialog_brokendroidx_title">Помилки на DROID X</string>
-<string name="ui_dialog_brokendroidx_msg">Існує помилка збереження вхідних повідомлень в Droid X. Будь ласка, перегляньте довідку на веб-сайті для детальної інформації.</string>
 <string name="ui_sync">Резервне копіювання</string>
 <string name="ui_skip">Проминути</string>
 <string name="err_sync_requires_login_info">Не можливо виконати резервне копіювання без входу до системи.</string>

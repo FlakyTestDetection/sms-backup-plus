@@ -67,7 +67,6 @@
   <string name="imap_settings">Настройки IMAP</string>
   <string name="ui_login_label">Логин</string>
   <string name="ui_login_desc">Ваш логин или адрес email.</string>
-  <string name="ui_login_dialog_msg">ВНИМАНИЕ: Изменение логина может вызвать проблемы при использовании XOAuth.</string>
   <string name="ui_password_label">Пароль</string>
   <string name="ui_password_desc">Ваш пароль IMAP. Используется только при отключении XOAuth.</string>
   <string name="ui_password_dialog_msg">Пароль хранится в телефоне и используется только для входа.</string>
@@ -98,7 +97,6 @@
 
   <string name="ui_backup_mms_label">Сохранять MMS</string>
   <string name="ui_backup_mms_desc">Включить сохранение MMS</string>
-  <string name="ui_backup_mms_not_supported">Сохранение MMS не поддерживается на этом устройстве.</string>
 
   <string name="ui_backup_calllog_label">Сохранять журнал вызовов</string>
   <string name="ui_backup_calllog_desc">Включить сохранение журнала вызовов (экспериментально)</string>
@@ -153,7 +151,6 @@
   <string name="ui_dialog_first_sync_title">Первое сохранение</string>
   <string name="ui_dialog_first_sync_msg">Сохранить существующие в телефоне сообщения?</string>
   <string name="ui_dialog_first_sync_msg_batched">Сохранить существующие в телефоне сообщения?\n\nЗамечание: Сообщения будут разбиты на %1$d группы.</string>
-  <string name="ui_dialog_request_token_msg">Соединение с Google...</string>
   <string name="ui_dialog_access_token_msg">Запрашиваю доступ...</string>
 
    <string name="ui_dialog_access_token_error_title">Ошибка авторизации</string>
@@ -161,16 +158,12 @@
   </string>
 
   <string name="ui_dialog_connect_msg">В открывшемся окне браузера подтвердите разрешение %1$s получить доступ к вашей почте.</string>
-  <string name="ui_dialog_connect_token_error">Не могу соединиться со службой Google. Убедитесь, что вы подключены к Интернету и правильно настроили часы и временную зону.</string>
   <string name="ui_dialog_disconnect_msg">Уверены? Вам будет необходимо заново подтвердить разрешение на доступ к вашему ящику. Текущее состояние сохранения будет сброшено.</string>
 
  <string name="ui_dialog_upgrade_title">Информация о совместимости</string>
   <string name="ui_dialog_upgrade_msg">
    SMS Backup+ полностью совместим с SMS Backup. Однако, если включить «Автосохранение» в обоих версиях, могут появиться дубликаты SMS. Если вы раньше использовали SMS Backup, нажмите «Пропустить» при первом резервировании.
   </string>
-
-  <string name="ui_dialog_brokendroidx_title">Проблема на Droid X</string>
-  <string name="ui_dialog_brokendroidx_msg">Существует проблема с сохранением входящих сообщений на Droid X. Пожалуйста, обратитесь к справочному разделу на сайте</string>
 
   <string name="ui_sync">Сохранить</string>
   <string name="ui_skip">Пропустить</string>

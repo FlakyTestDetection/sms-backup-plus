@@ -67,7 +67,6 @@
   <string name="imap_settings">Поставке ИМАП-а</string>
   <string name="ui_login_label">Корисничко име</string>
   <string name="ui_login_desc">Ваш ИМАП налог/е-адреса.</string>
-  <string name="ui_login_dialog_msg">УПОЗОРЕЊЕ: Промена корисничког имена може да поквари неке ствари када користите XOAuth.</string>
   <string name="ui_password_label">Лозинка</string>
   <string name="ui_password_desc">Лозинка вашег ИМАП налога. Користи се само када је XOAuth онемогућен.</string>
   <string name="ui_password_dialog_msg">Лозинка је сачувана на овом уређају и користи се само за пријаву.</string>
@@ -97,7 +96,6 @@
 
   <string name="ui_backup_mms_label">Копирај ММС</string>
   <string name="ui_backup_mms_desc">Омогући копирање ММС порука</string>
-  <string name="ui_backup_mms_not_supported">Прављење резервне копије ММС порука није подржано на овој платформи.</string>
 
   <string name="ui_backup_calllog_label">Копирај евид. позива</string>
   <string name="ui_backup_calllog_desc">Омогући копирање евиденције позива</string>
@@ -135,8 +133,6 @@
 
   <string name="sd_card_disclaimer">Аутоматско прављење резервне копије можда неће радити поуздано ако је апликација инсталирана на СД картици.</string>
 
-  <string name="ui_enable_auto_sync_bg_data">Такође је потребно да омогућите размену података у позадини.</string>
-
   <string name="ui_auto_backup_schedule_label">Редован распоред</string>
   <string name="ui_auto_backup_schedule_desc">Када копирати СМС поруке</string>
 
@@ -164,7 +160,6 @@
   <string name="ui_dialog_first_sync_title">Прва резерва</string>
   <string name="ui_dialog_first_sync_msg">Копирати или прескочити све поруке тренутно смештене на овом уређају?</string>
   <string name="ui_dialog_first_sync_msg_batched">Копирати или прескочити све поруке тренутно смештене на овом уређају?\n\nНапомена: Резервна копија ће бити подељена у гране са по %1$d порука.</string>
-  <string name="ui_dialog_request_token_msg">Контактирам Гугл…</string>
   <string name="ui_dialog_access_token_msg">Захтевам приступ…</string>
 
   <string name="ui_dialog_access_token_error_title">Неуспех овлашћења</string>
@@ -173,18 +168,12 @@
   </string>
 
   <string name="ui_dialog_connect_msg">Отвориће се прозор прегледача који ће тражити од вас да се пријавите на Gmail и дозволите %1$s да приступи вашој е-пошти.</string>
-  <string name="ui_dialog_connect_token_error">Нисам могао да добијем токен за захтев од Гугла. Уверите се да је веза са мрежом активна и да су време и временска зона исправно постављени.</string>
   <string name="ui_dialog_disconnect_msg">Желите ли сигурно? Биће потребна поновно овлашћење вашег налога након што прекинете везу, а локална синхронизација биће поништена.</string>
 
   <string name="ui_dialog_upgrade_title">Подаци о надоградњи</string>
   <string name="ui_dialog_upgrade_msg">
    СМС бекап+ је у потпуности уназад компатибилан са апликацијом СМС бекап. Међутим, уверите се да је „Аутоматско копирање“ омогућено у само једној апликацији, у супротном, можете имати дупликате. Такође, требали бисте да изаберете „Прескочи“ приликом прве синхронизације ако су поруке са телефона копиране раније.
   </string>
-
-  <string name="ui_dialog_brokendroidx_title">DROID X СМС грешка</string>
-  <string name="ui_dialog_brokendroidx_msg">Постоји грешка у Droid X која
-  спречава ову апликацију да направи копију долазних порука. Прочитајте
-  Најчешћа питања са вебсајта за више информација.</string>
 
   <string name="ui_sync">Копирај</string>
   <string name="ui_skip">Прескочи</string>

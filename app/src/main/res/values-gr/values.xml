@@ -66,7 +66,6 @@
   <string name="imap_settings">Ρυθμίσεις IMAP</string>
   <string name="ui_login_label">Username</string>
   <string name="ui_login_desc">Η IMAP account/e-mail διεύθυνσή σας.</string>
-  <string name="ui_login_dialog_msg">ΠΡΟΣΟΧΗ: Αλλάζοντας το username μπορεί να αλλοιωθούν πράγματα όταν χρησιμοποιείτε XOAuth.</string>
   <string name="ui_password_label">Password</string>
   <string name="ui_password_desc">Ο κωδικός για τον IMAP λογαριασμό σας. Χρησιμοποιείται όταν το XOAuth είναι αποσυνδεδεμένο.</string>
   <string name="ui_password_dialog_msg">Το password εισήχθει σε αυτή τη συσκευή και χρησιμοποιείται μόνο για login.</string>
@@ -96,7 +95,6 @@
 
   <string name="ui_backup_mms_label">Αποθήκευση MMS</string>
   <string name="ui_backup_mms_desc">Ενέργοποίηση Αποθήκευσης MMS</string>
-  <string name="ui_backup_mms_not_supported">Η αποθήκευση MMS δεν υποστηρίζεται από αυτή την πλατφόρμα.</string>
 
   <string name="ui_backup_calllog_label">Αποθήκευση κλήσεων</string>
   <string name="ui_backup_calllog_desc">Ενεργοποίηση Αποθήκευσης κλήσεων</string>
@@ -129,8 +127,6 @@
 
   <string name="sd_card_disclaimer">Η αυτόματη αποθήκευση ίσως δεν λειτουργεί αξιόπιστα όταν η εφαρμογή είναι εγκατεστημένη σε κάρτα SD.</string>
 
-  <string name="ui_enable_auto_sync_bg_data">Θα χρειαστεί να ενεργοποιήσεις background δεδομένα.</string>
-
   <string name="ui_auto_backup_schedule_label">Κανονικό πρόγραμμα</string>
   <string name="ui_auto_backup_schedule_desc">Πότε να γίνει αποθήκευση SMS</string>
 
@@ -156,7 +152,6 @@
   <string name="ui_dialog_first_sync_title">Πρώτη αποθήκευση</string>
   <string name="ui_dialog_first_sync_msg">Αποθήκευση ή παράληψη όλων των πρόσφατων μηνυμάτων της συσκεύης;</string>
   <string name="ui_dialog_first_sync_msg_batched"> Αποθήκευση ή παράληψη όλων των πρόσφατων μηνυμάτων της συσκεύης;\n\nNote: Η αποθήκευση θα χωριστεί σε πακέτα των %1$d μηνυμάτων.</string>
-  <string name="ui_dialog_request_token_msg">Συνδέεται με Google…</string>
   <string name="ui_dialog_access_token_msg">Αίτηση πρόσβασης…</string>
 
   <string name="ui_dialog_access_token_error_title">Σφάλμα πιστοποίησης </string>
@@ -165,17 +160,11 @@
   </string>
 
   <string name="ui_dialog_connect_msg"> Θα ανοίξει παράθυρο φυλομετρητή έτσι ώστε να    συνδεθείτε στο Gmail και  %1$s να σας δώσει πρόσβαση στα email σας .</string>
-  <string name="ui_dialog_connect_token_error"> Δεν θα μπορούσε να αποκτήσει διακριτικό αίτημα από το Google. Βεβαιωθείτε ότι η σύνδεση δικτύου είναι ενεργή και χρόνου / ζώνη ώρας σας έχει ρυθμιστεί σωστά.</string>
   <string name="ui_dialog_disconnect_msg"> Είσαι σίγουρος; Θα πρέπει να επιτραπούν εκ νέου το λογαριασμό σας μετά την αποσύνδεση και την τοπική κατάσταση συγχρονισμού θα πρέπει να επαναφέρετε.</string>
 
   <string name="ui_dialog_upgrade_title">Πληροφορίες Αναβάθμισεις</string>
   <string name="ui_dialog_upgrade_msg">
 Η δημιουργία αντιγράφων ασφαλείας με το SMS + είναι πλήρως συμβατή με το αντίγραφο ασφαλείας SMS. Ωστόσο, θα πρέπει να  βεβαιωθείτε ότι \ "αυτόματη δημιουργία αντιγράφων ασφαλείας \" είναι ενεργοποιημένη μόνο σε μια εφαρμογή, αλλιώς μπορεί να έχετε διπλότυπα. Επίσης, θα πρέπει να επιλέξετε \ " Παράλειψη \" μηνύματα για το πρώτο συγχρονισμό σας εαν τα μηνύματα στο τηλέφωνο ήδη το προηγούμενο backup.  </string>
-
-  <string name="ui_dialog_brokendroidx_title">DROID X SMS Bug</string>
-  <string name="ui_dialog_brokendroidx_msg"> Υπάρχει ένα σφάλμα στο Droid X το οποίο
-   αποτρέπει αυτήν την εφαρμογή από τη δημιουργία αντιγράφων ασφαλείας των εισερχόμενων μηνυμάτων. Δείτε το FAQ
-   σχετικά με την ιστοσελίδα για περισσότερες πληροφορίες.</string>
 
   <string name="ui_sync"> Δημιουργία αντιγράφων ασφαλείας </string>
   <string name="ui_skip"> Μετάβαση </string>

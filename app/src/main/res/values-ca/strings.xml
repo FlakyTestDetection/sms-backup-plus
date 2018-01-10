@@ -67,7 +67,6 @@
   <string name="imap_settings">Configuració d\'IMAP</string>
   <string name="ui_login_label">Nom d\'usuari</string>
   <string name="ui_login_desc">Compte IMAP/adreça de correu electrònic.</string>
-  <string name="ui_login_dialog_msg">AVÍS: El canvi del nom d\'usuari pot fer malbé coses en utilitzar XOAuth.</string>
   <string name="ui_password_label">Contrasenya</string>
   <string name="ui_password_desc">La contrasenya del compte IMAP. Només s\'utilitza quan XOAuth està inhabilitat.</string>
   <string name="ui_password_dialog_msg">La contrasenya es desa al dispositiu i només s\'utilitza per iniciar la sessió.</string>
@@ -97,7 +96,6 @@
 
   <string name="ui_backup_mms_label">Còpia d\'MMS</string>
   <string name="ui_backup_mms_desc">Habilita la còpia d\'MMS</string>
-  <string name="ui_backup_mms_not_supported">La còpia d\'MMS no és compatible amb aquesta plataforma.</string>
 
   <string name="ui_backup_calllog_label">Còpia del registre de trucades</string>
   <string name="ui_backup_calllog_desc">Habilita la còpia del registre de trucades</string>
@@ -131,8 +129,6 @@
 
   <string name="sd_card_disclaimer">És possible que la còpia automàtica no funcioni de forma fiable si l\'aplicació està instal·lada a la targeta SD.</string>
 
-  <string name="ui_enable_auto_sync_bg_data">També caldrà que habiliteu les dades en segon pla.</string>
-
   <string name="ui_auto_backup_schedule_label">Planificació regular</string>
   <string name="ui_auto_backup_schedule_desc">Quan s\'han de copiar els SMS</string>
 
@@ -160,7 +156,6 @@
   <string name="ui_dialog_first_sync_title">Primera còpia de seguretat</string>
   <string name="ui_dialog_first_sync_msg">S\'ha de copiar o ignorar tots els missatges que hi ha emmagatzemats actualment al dispositiu?</string>
   <string name="ui_dialog_first_sync_msg_batched">S\'ha de copiar o ignorar tots els missatges que hi ha emmagatzemats actualment al dispositiu?\n\nNota: La còpia es dividirà en lots de %1$d missatges.</string>
-  <string name="ui_dialog_request_token_msg">S\'està contactant amb Google…</string>
   <string name="ui_dialog_access_token_msg">S\'està sol·licitant accés…</string>
 
   <string name="ui_dialog_access_token_error_title">Ha fallat l\'autorització</string>
@@ -169,18 +164,12 @@
   </string>
 
   <string name="ui_dialog_connect_msg">S\'obrirà una finestra del navegador que us demanarà que inicieu la sessió a Gmail per concedir %1$s accés al correu electrònic.</string>
-  <string name="ui_dialog_connect_token_error">No s\'ha pogut aconseguir el testimoni d\'accés de Google. Assegureu-vos que la connexió de xarxa està activa i que l\'hora i la zona horària estan ben configurats.</string>
   <string name="ui_dialog_disconnect_msg">Segur? Caldrà que torneu a autoritzar el compte després de la desconnexió i l\'estat de sincronització local es restablirà.</string>
 
   <string name="ui_dialog_upgrade_title">Informació d\'actualització</string>
   <string name="ui_dialog_upgrade_msg">
    L\'SMS Backup+ és totalment compatible cap enrere amb l\'SMS Backup. Assegureu-vos però que la \"Còpia automàtica\" només està habilitada en una aplicació, en cas contrari us podríeu trobar duplicats. També hauríeu de seleccionar \"Omet\" els missatges per a la primera sincronització si ja s\'ha fet una còpia dels missatges del telèfon.
   </string>
-
-  <string name="ui_dialog_brokendroidx_title">Error d\'SMS DROID X</string>
-  <string name="ui_dialog_brokendroidx_msg">Hi ha un error al Droid X que
-  no permet que l\'aplicació copiï els missatges d\'entrada. Vegeu les PMFS
-  al lloc web per a més informació.</string>
 
   <string name="ui_sync">Copia</string>
   <string name="ui_skip">Omet</string>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
           package="com.zegoggles.smssync"
-          android:description="@string/app_description"
->
+          android:description="@string/app_description">
 
     <uses-permission android:name="android.permission.READ_SMS"/>
     <uses-permission android:name="android.permission.WRITE_SMS"/>
@@ -35,12 +35,12 @@
     <application android:icon="@drawable/ic_launcher"
       android:label="@string/app_name"
       android:description="@string/app_description"
+      android:theme="@style/SMSBackupPlusTheme"
       android:backupAgent=".preferences.PreferenceBackupAgent"
       android:allowBackup="true"
       android:name="App">
 
-        <activity android:name=".activity.MainActivity" android:label="@string/app_name"
-                  android:theme="@style/Theme.SmsBackupPlus">
+        <activity android:name=".activity.MainActivity" android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -65,8 +65,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.auth.AccountManagerAuthActivity" android:theme="@style/Theme.SmsBackupPlus"/>
-        <activity android:name=".activity.donation.DonationActivity" android:theme="@style/Theme.Donation"/>
+        <activity android:name=".activity.auth.AccountManagerAuthActivity"/>
+        <activity android:name=".activity.donation.DonationActivity"/>
 
         <service android:name=".service.SmsBackupService" android:exported="false"/>
         <service android:name=".service.SmsRestoreService" android:exported="false"/>
@@ -150,6 +150,6 @@
 
         <meta-data
             android:name="com.google.android.backup.api_key"
-            android:value="AEdPqrEAAAAI15zt2oJAvxMu4s5SaHisDyYsduKd2jq_-XnAug" />
+            android:value="@string/backup_api_key"/>
     </application>
 </manifest>

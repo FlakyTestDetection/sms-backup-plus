@@ -67,7 +67,6 @@
   <string name="imap_settings">IMAP 设置</string>
   <string name="ui_login_label">用户名</string>
   <string name="ui_login_desc">您的 IMAP 账户名/邮箱地址。</string>
-  <string name="ui_login_dialog_msg">警告：使用 XOAuth 时更改用户名可能会造成错误。</string>
   <string name="ui_password_label">密码</string>
   <string name="ui_password_desc">你的 IMAP 账号的密码。仅在 XOAuth 禁用时有效。</string>
   <string name="ui_password_dialog_msg">密码只会储存在这台设备上，并且仅供登录使用。</string>
@@ -97,7 +96,6 @@
 
   <string name="ui_backup_mms_label">备份彩信</string>
   <string name="ui_backup_mms_desc">启用彩信备份</string>
-  <string name="ui_backup_mms_not_supported">您的设备不支持备份彩信。</string>
 
   <string name="ui_backup_calllog_label">备份通话记录</string>
   <string name="ui_backup_calllog_desc">启用通话记录备份</string>
@@ -135,8 +133,6 @@
 
   <string name="sd_card_disclaimer">当本程序安装在 SD 卡中时，自动备份可能无法正常工作。</string>
 
-  <string name="ui_enable_auto_sync_bg_data">您同时需要开启后台数据。</string>
-
   <string name="ui_auto_backup_schedule_label">定时备份计划</string>
   <string name="ui_auto_backup_schedule_desc">何时备份短信</string>
 
@@ -164,7 +160,6 @@
   <string name="ui_dialog_first_sync_title">首次备份</string>
   <string name="ui_dialog_first_sync_msg">备份或跳过当前存储在设备上的所有信息？</string>
   <string name="ui_dialog_first_sync_msg_batched">备份或跳过当前存储在设备上的信息？\n\提示：这次备份将会以每次 %1$d 个项目的状态进行。</string>
-  <string name="ui_dialog_request_token_msg">联络 Google 中...</string>
   <string name="ui_dialog_access_token_msg">请求访问中...</string>
 
   <string name="ui_dialog_access_token_error_title">认证失败</string>
@@ -173,18 +168,12 @@
   </string>
 
   <string name="ui_dialog_connect_msg">将会开启一个浏览器, 提示您登录 Gmail 并授权 %1$s 访问您的邮件。</string>
-  <string name="ui_dialog_connect_token_error">无法从 Google 获取授权。请确认您已连接到网络并设置了正确的时间/时区。</string>
   <string name="ui_dialog_disconnect_msg">您确认要断开连接吗？您将需要重新认证账户，并且本地的同步状态将被重置。</string>
 
   <string name="ui_dialog_upgrade_title">升级信息</string>
   <string name="ui_dialog_upgrade_msg">
    SMS Backup+ 完全向下兼容于 SMS Backup。不过请确保“自动备份”仅在一个程序里启用，否则将会出现重复备份。如果您已经对设备中的信息进行过备份，首次备份时应该选择“跳过”。
   </string>
-
-  <string name="ui_dialog_brokendroidx_title">DROID X 短信缺陷</string>
-  <string name="ui_dialog_brokendroidx_msg">Droid X 有一个导致
-  新信息备份无法正常工作的缺陷。想要了解更多细节，
-  请访问网站上的常见问题(FAQ)。</string>
 
   <string name="ui_sync">备份</string>
   <string name="ui_skip">跳过</string>

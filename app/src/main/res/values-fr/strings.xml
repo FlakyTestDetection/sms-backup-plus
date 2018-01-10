@@ -67,7 +67,6 @@
   <string name="imap_settings">Paramètres IMAP</string>
   <string name="ui_login_label">Nom d\'utilisateur</string>
   <string name="ui_login_desc">Adresse e-mail/nom de votre compte IMAP.</string>
-  <string name="ui_login_dialog_msg">ATTENTION: Changer le nom d\'utilisateur pourrait perturber certaines fonctions si vous utilisez l\'identification XOAuth.</string>
   <string name="ui_password_label">Mot de passe</string>
   <string name="ui_password_desc">Mot de passe de votre compte IMAP. Utile seulement si l\'identification XOAuth est désactivé.</string>
   <string name="ui_password_dialog_msg">Le mot de passe est stocké sur votre mobile et n\'est utilisé que pour la connexion à votre compte.</string>
@@ -97,7 +96,6 @@
 
   <string name="ui_backup_mms_label">Sauvegarde de MMS</string>
   <string name="ui_backup_mms_desc">Activer la sauvegarde de MMS</string>
-  <string name="ui_backup_mms_not_supported">La sauvegarde de MMS n\'est pas gérée sur cette plateforme.</string>
 
   <string name="ui_backup_calllog_label">Sauvegarde du journal d\'appels</string>
   <string name="ui_backup_calllog_desc">Activer la sauvegarde du journal d\'appels</string>
@@ -135,8 +133,6 @@
 
   <string name="sd_card_disclaimer">La sauvegarde automatique pourrait ne pas fonctionner correctement si l\'application est installée sur la carte SD.</string>
 
-  <string name="ui_enable_auto_sync_bg_data">Vous avez également besoin d\'activer les données d\'arrière plan.</string>
-
   <string name="ui_auto_backup_schedule_label">Intervalle</string>
   <string name="ui_auto_backup_schedule_desc">Définir à quelle fréquence les SMS seront sauvegardés.</string>
 
@@ -163,7 +159,6 @@
   <string name="ui_dialog_first_sync_title">Première sauvegarde</string>
   <string name="ui_dialog_first_sync_msg">Sauvegarder ou non les messages stockés actuellement sur cet appareil ?</string>
   <string name="ui_dialog_first_sync_msg_batched">Sauvegarder ou non les messages actuellement stockés sur cet appareil ?\n\nA savoir : la sauvegarde se fera par tranche de %1$d messages.</string>
-  <string name="ui_dialog_request_token_msg">Connexion à Google…</string>
   <string name="ui_dialog_access_token_msg">Demande d\'accès…</string>
 
   <string name="ui_dialog_access_token_error_title">Echec de l\'authentification</string>
@@ -171,18 +166,12 @@
   </string>
 
   <string name="ui_dialog_connect_msg">Votre navigateur va s\'ouvrir, vous demandant de vous identifier à Gmail, afin d\'autoriser %1$s l\'accès à vos e-mails.</string>
-  <string name="ui_dialog_connect_token_error">Impossible d\'obtenir la requête d\'identification de Google. Veuillez vérifier que le réseau est actif et que le fuseau horaire est configuré correctement.</string>
   <string name="ui_dialog_disconnect_msg">Êtes-vous certain ? Vous devrez ensuite ré-autoriser l\'accès à votre compte une fois déconnecté, et la syncronisation locale sera réinitialisée.</string>
 
   <string name="ui_dialog_upgrade_title">Informations de mises à jour</string>
   <string name="ui_dialog_upgrade_msg">
    SMS Backup+ est entièrement rétro-compatible avec SMS Backup. Veuillez cependant vérifier que l\'option \"Sauvegarde automatique\" n\'est activée que dans une des deux applications, sinon vous aurez des sauvegardes en double. Il est également conseillé de séléctionner \"Ignorer\" les messages pour votre première sauvgarde, si vous les avez déjà sauvegardés.
   </string>
-
-  <string name="ui_dialog_brokendroidx_title">Bug SMS DROID X</string>
-  <string name="ui_dialog_brokendroidx_msg">Il y a un bug avec le Droid X qui
-  empêche cette application de sauvegarder les message entrants. Plus d\'informations dans la FAQ
-  disponible sur le site.</string>
 
   <string name="ui_sync">Sauvegarder</string>
   <string name="ui_skip">Ignorer</string>

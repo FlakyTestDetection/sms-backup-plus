@@ -67,7 +67,6 @@
   <string name="imap_settings">IMAP 설정</string>
   <string name="ui_login_label">사용자 이름</string>
   <string name="ui_login_desc">당신의 IMAP 계정/이메일 주소.</string>
-  <string name="ui_login_dialog_msg">경고: 사용자 이름을 바꾸면 XOAuth가 오작동하게 될 수 있습니다.</string>
   <string name="ui_password_label">비밀번호</string>
   <string name="ui_password_desc">당신의 IMAP 계정 비밀번호. XOAuth가 비활성화되었을 때에만 사용함.</string>
   <string name="ui_password_dialog_msg">비밀번호가 이 장치에 저장되었으며 로그인 시에만 사용됩니다.</string>
@@ -97,7 +96,6 @@
 
   <string name="ui_backup_mms_label">MMS 백업</string>
   <string name="ui_backup_mms_desc">MMS 백업 활성화</string>
-  <string name="ui_backup_mms_not_supported">이 플랫폼에서는 MMS 백업이 지원되지 않습니다.</string>
 
   <string name="ui_backup_calllog_label">통화 기록 백업</string>
   <string name="ui_backup_calllog_desc">통화 기록 백업 활성화</string>
@@ -135,8 +133,6 @@
 
   <string name="sd_card_disclaimer">자동백업은 앱이 SD 카드에 설치되었을 때 작동하지 않을 수 있습니다.</string>
 
-  <string name="ui_enable_auto_sync_bg_data">백그라운드 데이터를 사용하도록 설정해야 합니다.</string>
-
   <string name="ui_auto_backup_schedule_label">정기 스케쥴</string>
   <string name="ui_auto_backup_schedule_desc">SMS를 백업할 시간 간격</string>
 
@@ -163,7 +159,6 @@
   <string name="ui_dialog_first_sync_title">최초 백업</string>
   <string name="ui_dialog_first_sync_msg">장치에 저장된 모든 메시지를 백업할까요, 건너뛸까요?</string>
   <string name="ui_dialog_first_sync_msg_batched">장치에 저장된 모든 메시지를 백업할까요, 건너뛸까요?\n\n주의: 백업은 %1$d 개씩의 메시지로 분할되어 일괄처리됩니다.</string>
-  <string name="ui_dialog_request_token_msg">Google에 연결 중...</string>
   <string name="ui_dialog_access_token_msg">액세스 요청 중...</string>
 
   <string name="ui_dialog_access_token_error_title">인증 실패</string>
@@ -172,18 +167,12 @@
   </string>
 
   <string name="ui_dialog_connect_msg">브라우저 창이 열려서 이메일에 %1$s 접근을 승인하기 위해 Gmail에 로그인하라고 할 것입니다.</string>
-  <string name="ui_dialog_connect_token_error">Google로부터 토큰을 받아오지 못했습니다. 네트워크 연결이 활성화되었는지 확인하고 시간과 시간대 설정이 올바르게 되었는지 확인하십시오.</string>
   <string name="ui_dialog_disconnect_msg">확실한가요? 연결을 해제하고 난 후에는 계정을 재인증해야 하고 로컬 동기화 상태가 초기화될 것입니다.</string>
 
   <string name="ui_dialog_upgrade_title">업그레이드 정보</string>
   <string name="ui_dialog_upgrade_msg">
    SMS Backup+는 SMS Backup과 완벽하게 호환됩니다. 그러나 \"자동 백업\"이 한 앱에서만 활성화되어 있는지 확인하십시오, 그렇지 않으면 중복된 결과를 얻을 수 있습니다. 또한, 휴대 전화에 있는 메시지가 이미 이전에 백업되었다면 당신은 첫 번째 동기화에 대해 \"건너뛰기\"를 선택해야 합니다.
   </string>
-
-  <string name="ui_dialog_brokendroidx_title">DROID X SMS 버그</string>
-  <string name="ui_dialog_brokendroidx_msg">들어오는 메시지를 백업하는 이 앱의 기능이
-    차단되는 DROID X의 버그가 있습니다.
-    자세한 내용은 웹 사이트의 FAQ를 참조하십시오.</string>
 
   <string name="ui_sync">백업</string>
   <string name="ui_skip">건너뛰기</string>

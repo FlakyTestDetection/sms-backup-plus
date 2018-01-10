@@ -48,7 +48,6 @@
   <string name="imap_settings">Aranzhimet e IMAP</string>
   <string name="ui_login_label">Emri i Përdoruesit</string>
   <string name="ui_login_desc">Llogaria juaj e IMAP/adresa juaj e e-mail.</string>
-  <string name="ui_login_dialog_msg">Kujdes: Ndryshimi i emrit të përdoruesit mund të prishi punë gjatë përdorimit të XOAuth.</string>
   <string name="ui_password_label">Fjalëkalimi</string>
   <string name="ui_password_desc">Fjalëkalimi i llogarisë suaj IMAP. Përdoret vetën kur XOAuth është jo aktiv.</string>
   <string name="ui_password_dialog_msg">Fjalëkalimi është ruajtur në këtë pajisje dhe përdoret vetëm për hyrje.</string>
@@ -74,7 +73,6 @@
   <string name="ui_restore_starred_only_desc">Rikthe vetëm shënimet e yllëzuara.</string>
   <string name="ui_backup_mms_label">Krijo kopje rezervë të MMS-ve</string>
   <string name="ui_backup_mms_desc">Aktivizoni krijimin e kopjes rezervë të MMS-ve</string>
-  <string name="ui_backup_mms_not_supported">Krijimi i kopjes rezervë të MMS-ve nuk mbështet në këtë platformë.</string>
   <string name="ui_backup_calllog_label">Krijoni kopje rezervë të ditarit të thirrjeve</string>
   <string name="ui_backup_calllog_desc">Aktivizoni krijimin e kopjes rezervë të ditarit të thirrjeve</string>
   <string name="ui_backup_calllog_sync_calendar_enabled_label">Sinkronizim i kalendarit</string>
@@ -97,7 +95,6 @@
   <string name="ui_enable_auto_sync_summary">Krijimi i kopjes rezervë automatike %1$s.</string>
   <string name="ui_enable_auto_sync_no_enabled_summary">Nuk është përzgjedhur tip shënimi për tu ruajtur rezervë.</string>
   <string name="sd_card_disclaimer">Krijimi automatik i kopjes rezervë mund të mos punoj sic duhet kur programi është i instaluar në kartën SD.</string>
-  <string name="ui_enable_auto_sync_bg_data">Gjithashtu do t\'ju duhet të aktivizoni të dhënat në sfond.</string>
   <string name="ui_auto_backup_schedule_label">Planifikim i rregullt</string>
   <string name="ui_auto_backup_schedule_desc">Kur të krijoni kopje rezervë të SMS-ve</string>
   <string name="ui_auto_backup_incoming_schedule_label">Planifikimi i gjurmëve hyrëse</string>
@@ -118,22 +115,16 @@
   <string name="ui_dialog_first_sync_title">Kopja rezervë e parë</string>
   <string name="ui_dialog_first_sync_msg">Krijoni kopje rezervë ose anashkaloni gjithë mesazhet e ruajtura në këtë pajisje?</string>
   <string name="ui_dialog_first_sync_msg_batched">Krijoni kopje rezervë ose i anashkaloni të gjitha mesazhet të ruajtura aktualisht në pajisje?\n\nVini re: Kopja rezervë do të ndahet në grumbuj %1$d mesazhesh.</string>
-  <string name="ui_dialog_request_token_msg">Duke kontaktuar Google…</string>
   <string name="ui_dialog_access_token_msg">Duke kërkuar akses…</string>
   <string name="ui_dialog_access_token_error_title">Gabim verifikimi</string>
   <string name="ui_dialog_access_token_error_msg">Nuk mund të marri shenjën e aksesit. Sigurohuni të zgjidhni
     \"Siguro akses\".
   </string>
   <string name="ui_dialog_connect_msg">Një dritare shfletuesi do të hapet, duke ju kërkuar të futeni në Gmail për të siguruar %1$s akses në e-mailet tuaja.</string>
-  <string name="ui_dialog_connect_token_error">Nuk mund të marri shenjën e kërkesës nga Google. Sigurohuni që lidhja me rrjetin është aktive dhe koha / zona e kohës është konfiguruar saktë.</string>
   <string name="ui_dialog_disconnect_msg">Jeni të sigurtë? Ju do të keni nevojë të riautorizoni llogarinë tuaj mbas i keni shkëputur si dhe gjendja e sinkronizimit lokal do të rivendoset.</string>
   <string name="ui_dialog_upgrade_title">Informacion përditësimi</string>
   <string name="ui_dialog_upgrade_msg">
    SMS Backup+ është i prapapërpuethshëm plotësisht me SMS Backup. Megjithatë sigurohuni që \"krijimi i kopjes rezervë automatike\" është i aktivizuar vetëm në njërin program, përndryshe do të hasni kopje identike. Gjithashtu ju duhet të përzgjidhni \"Tejkalo\" mesazhet për sinkronizimin tuaj të parë nëse mesazhet në telefon janë tashmë të ruajtura rezervë që më parë.\</string>
-  <string name="ui_dialog_brokendroidx_title">Mangësi e SMS të DROID X</string>
-  <string name="ui_dialog_brokendroidx_msg">Ka një mangësi tek Droid X e cila
-  nuk e lejon këtë program të krijoi kopje rezervë të mesazheve hyrëse. Shikoni FAQ
-  në faqen e internetit për më shumë informacion.</string>
   <string name="ui_sync">Kopje rezervë</string>
   <string name="ui_skip">Anashkalo</string>
   <string name="err_sync_requires_login_info">Nuk mund të krijoj kopje rezervë pa informacionin e hyrjes.</string>

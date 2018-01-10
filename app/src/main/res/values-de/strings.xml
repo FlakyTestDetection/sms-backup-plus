@@ -66,7 +66,6 @@
   <string name="imap_settings">IMAP Einstellungen</string>
   <string name="ui_login_label">Benutzername</string>
   <string name="ui_login_desc">Ihr IMAP-Konto/E-Mail-Adresse</string>
-  <string name="ui_login_dialog_msg">WARNUNG: Das Verändern des Benutzernamens könnte Schwierigkeiten beim Benutzen von XOAuth bereiten.</string>
   <string name="ui_password_label">Passwort</string>
   <string name="ui_password_desc">Ihr IMAP-Konto-Passwort. Wird nur benötigt, falls XOAuth deaktiviert wurde.</string>
   <string name="ui_password_dialog_msg">Das Password wird auf diesem Gerät gespeichert und nur zur Anmeldung benutzt.</string>
@@ -96,7 +95,6 @@
 
   <string name="ui_backup_mms_label">MMS sichern</string>
   <string name="ui_backup_mms_desc">MMS Sicherung aktivieren</string>
-  <string name="ui_backup_mms_not_supported">MMS Sicherung wird auf dieser Plattform nicht unterstützt</string>
 
   <string name="ui_backup_calllog_label">Anrufliste sichern</string>
   <string name="ui_backup_calllog_desc">Sicherung der Anrufliste aktivieren</string>
@@ -133,8 +131,6 @@
 
   <string name="sd_card_disclaimer">Die automatische Sicherung könnte nicht funktionieren wenn die App auf die SD-Karte installiert wurde.</string>
 
-  <string name="ui_enable_auto_sync_bg_data">Sie müssen die Hintergrunddaten aktivieren.</string>
-
   <string name="ui_auto_backup_schedule_label">Zeitplan (regulär)</string>
   <string name="ui_auto_backup_schedule_desc">Wann SMS gesichert werden sollen.</string>
 
@@ -161,25 +157,18 @@
   <string name="ui_dialog_first_sync_title">Erste Sicherung</string>
   <string name="ui_dialog_first_sync_msg">Sollen alle Nachrichten auf diesem Gerät gesichert oder übersprungen werden?</string>
   <string name="ui_dialog_first_sync_msg_batched">Sollen alle Nachrichten auf diesem Gerät gesichert oder übersprungen werden?\n\nHinweis: Die Sicherung wird in Stapel zu je %1$d Nachrichten aufgesplittet.</string>
-  <string name="ui_dialog_request_token_msg">Verbinde mit Google...</string>
   <string name="ui_dialog_access_token_msg">Zugangsanforderung...</string>
 
   <string name="ui_dialog_access_token_error_title">Authorisierungsfehler</string>
   <string name="ui_dialog_access_token_error_msg">Konnte Zugangstoken nicht erhalten. Stellen Sie sicher dass Sie \"Zugriff gewähren\" gewählt haben.</string>
 
   <string name="ui_dialog_connect_msg">Melden Sie sich im nachfolgenden Browser Fenster bitte bei Gmail an und gewähren Sie %1$s Zugriff zu Ihren E-Mails.</string>
-  <string name="ui_dialog_connect_token_error">Konnte Anforderungstoken von Google nicht erhalten. Stellen Sie sicher dass die Netzwerkverbindung aktiv ist und Ihre Uhrzeit/Zeitzone richtig eingestellt ist.</string>
   <string name="ui_dialog_disconnect_msg">Sind Sie sicher? Nach der Trennung werden Sie sich erneut anmelden müssen. Außerdem wird Ihr Synchronisierungsstatus zurückgesetzt.</string>
 
   <string name="ui_dialog_upgrade_title">Upgrade Information</string>
   <string name="ui_dialog_upgrade_msg">
    SMS Backup+ ist vollständig abwärtskompatibel mit SMS Backup. Die \"Automatische Sicherung\" sollte allerdings nur in einer App aktiviert sein, andernfalls könnten Duplikate enstehen. Außerdem sollten Sie \"Überspringen\" für Ihre erste Sicherung wählen falls Ihre Daten vormals schon gesichert wurden.
   </string>
-
-  <string name="ui_dialog_brokendroidx_title">DROID X SMS Bug</string>
-  <string name="ui_dialog_brokendroidx_msg">Ein Programmfehler auf dem Droid X verhindert
-  dass diese App eingehende Nachrichten sichern kann. Für nähere Informationen werfen Sie bitte
-  einen Blick in die FAQ auf der Website.</string>
 
   <string name="ui_sync">Sicherung</string>
   <string name="ui_skip">Überspringen</string>
