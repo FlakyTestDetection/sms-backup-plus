@@ -1,5 +1,6 @@
 package com.zegoggles.smssync.activity.fragments;
 
+import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -15,6 +16,7 @@ import com.zegoggles.smssync.R;
 import com.zegoggles.smssync.activity.events.ThemeChangedEvent;
 import com.zegoggles.smssync.calendar.CalendarAccessor;
 import com.zegoggles.smssync.contacts.ContactAccessor;
+import com.zegoggles.smssync.contacts.Group;
 import com.zegoggles.smssync.mail.BackupImapStore;
 import com.zegoggles.smssync.mail.DataType;
 import com.zegoggles.smssync.preferences.AuthMode;
@@ -25,8 +27,11 @@ import java.text.DateFormat;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Map;
 
+import static android.Manifest.permission.READ_CONTACTS;
 import static android.Manifest.permission.WRITE_CALENDAR;
+import static android.content.pm.PackageManager.PERMISSION_GRANTED;
 import static com.zegoggles.smssync.App.TAG;
 import static com.zegoggles.smssync.activity.AppPermission.allGranted;
 import static com.zegoggles.smssync.activity.Dialogs.Type.INVALID_IMAP_FOLDER;
@@ -40,6 +45,7 @@ import static com.zegoggles.smssync.preferences.Preferences.Keys.CALLLOG_SYNC_CA
 import static com.zegoggles.smssync.preferences.Preferences.Keys.IMAP_SETTINGS;
 import static com.zegoggles.smssync.preferences.Preferences.Keys.MAX_ITEMS_PER_RESTORE;
 import static com.zegoggles.smssync.preferences.Preferences.Keys.MAX_ITEMS_PER_SYNC;
+import static com.zegoggles.smssync.utils.ListPreferenceHelper.initListPreference;
 
 public class AdvancedSettings extends SMSBackupPreferenceFragment {
     public static class Main extends AdvancedSettings {
@@ -121,9 +127,14 @@ public class AdvancedSettings extends SMSBackupPreferenceFragment {
         }
 
         private void initGroups() {
-            ContactAccessor contacts = ContactAccessor.Get.instance();
-            ListPreferenceHelper.initListPreference((ListPreference) findPreference(BACKUP_CONTACT_GROUP.key),
-                    contacts.getGroups(getContext().getContentResolver(), getResources()), false);
+            final ListPreference preference = (ListPreference) findPreference(BACKUP_CONTACT_GROUP.key);
+            if (ContextCompat.checkSelfPermission(getContext(), READ_CONTACTS) == PERMISSION_GRANTED) {
+                ContactAccessor contacts = new ContactAccessor();
+                final Map<Integer, Group> groups = contacts.getGroups(getContext().getContentResolver(), getResources());
+                initListPreference(preference, groups, false);
+            } else {
+                preference.setEnabled(false);
+            }
         }
 
         public static class CallLog extends AdvancedSettings {
@@ -182,7 +193,7 @@ public class AdvancedSettings extends SMSBackupPreferenceFragment {
             }
 
             private boolean needCalendarPermission() {
-                return ContextCompat.checkSelfPermission(getContext(), WRITE_CALENDAR) != PackageManager.PERMISSION_GRANTED;
+                return ContextCompat.checkSelfPermission(getContext(), WRITE_CALENDAR) != PERMISSION_GRANTED;
             }
 
             private void updateCallLogCalendarLabelFromPref() {
@@ -194,7 +205,7 @@ public class AdvancedSettings extends SMSBackupPreferenceFragment {
                 if (needCalendarPermission()) return;
 
                 CalendarAccessor calendars = CalendarAccessor.Get.instance(getContext().getContentResolver());
-                ListPreferenceHelper.initListPreference(calendarPreference, calendars.getCalendars(), false);
+                initListPreference(calendarPreference, calendars.getCalendars(), false);
             }
 
             private void registerValidCallLogFolderCheck() {

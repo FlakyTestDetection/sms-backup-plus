@@ -85,7 +85,7 @@ public class SmsRestoreService extends ServiceBase {
                     getPreferences(),
                     getAuthPreferences().getUserEmail(),
                     new PersonLookup(getContentResolver()),
-                    ContactAccessor.Get.instance()
+                    new ContactAccessor()
             );
 
             RestoreConfig config = new RestoreConfig(
@@ -169,7 +169,7 @@ public class SmsRestoreService extends ServiceBase {
         }
     }
 
-    public static boolean isServiceWorking() {
-        return service != null && service.isWorking();
+    public static boolean isServiceIdle() {
+        return service == null || !service.isWorking();
     }
 }
